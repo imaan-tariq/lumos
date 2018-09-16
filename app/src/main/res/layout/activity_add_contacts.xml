@@ -37,6 +37,7 @@
 
         <EditText
             android:id="@+id/EditTextPhone1"
+            android:inputType="phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Phone Number" />
@@ -54,6 +55,7 @@
 
         <EditText
             android:id="@+id/EditTextPhone2"
+            android:inputType="phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Phone Number" />
@@ -71,6 +73,7 @@
 
         <EditText
             android:id="@+id/EditTextPhone3"
+            android:inputType="phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Phone Number" />
@@ -88,6 +91,7 @@
 
         <EditText
             android:id="@+id/EditTextPhone4"
+            android:inputType="phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Phone Number" />
@@ -105,15 +109,23 @@
 
         <EditText
             android:id="@+id/EditTextPhone5"
+            android:inputType="phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Phone Number" />
 
         <Button
-            android:id="@+id/buttonAddInfo"
+            android:id="@+id/buttonSave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Save" />
+
+        <Button
+            android:id="@+id/buttonContactsList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose From Contacts"
+            android:onClick="launchMultiplePhonePicker" />
 
     </LinearLayout>
 </ScrollView>
