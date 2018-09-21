@@ -37,7 +37,7 @@ import com.google.firebase.database.FirebaseDatabase;
                 startActivity(new Intent(this, SignInActivity.class));
             }
 
-            databaseReference= FirebaseDatabase.getInstance().getReference();
+            databaseReference = FirebaseDatabase.getInstance().getReference();
 
             name = findViewById(R.id.EditTextName);
             address = findViewById(R.id.EditTextAddress);
@@ -78,6 +78,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
             if(view == save){
                 saveUserInformation();
+                startActivity(new Intent(this, AddContacts.class));
             }
         }
     }

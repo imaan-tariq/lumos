@@ -82,7 +82,7 @@ import com.google.firebase.auth.FirebaseAuth;
                                 //user is successfully registered and logged in
                                 //check if user is already logged in
                                 finish();
-                                startActivity(new Intent(getApplicationContext(), AddContacts.class));
+                                startActivity(new Intent(getApplicationContext(), UserProfileActivity.class));
                             }
                             else{
                                 Toast.makeText(SignUpActivity.this, "Registration Failed. Try Again.", Toast.LENGTH_SHORT).show();

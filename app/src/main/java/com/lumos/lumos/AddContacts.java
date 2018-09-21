@@ -11,6 +11,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class AddContacts extends AppCompatActivity implements View.OnClickListener{
@@ -19,6 +25,8 @@ public class AddContacts extends AppCompatActivity implements View.OnClickListen
     //public static final int REQUEST_CODE_PICK_CONTACT = 1;
     //public static final int  MAX_PICK_CONTACT= 1;
     //private static final String TAG = "MyActivity";
+    private FirebaseAuth firebaseAuth;
+    private DatabaseReference databaseReference;
 
     private EditText name;
     private EditText phone;
@@ -49,6 +57,9 @@ public class AddContacts extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_contacts);
 
+        firebaseAuth = FirebaseAuth.getInstance();
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+
         contact1();
         contact2();
         contact3();
@@ -57,6 +68,9 @@ public class AddContacts extends AppCompatActivity implements View.OnClickListen
 
         save = findViewById(R.id.buttonSave);
         skip = findViewById(R.id.buttonSkip);
+
+        save.setOnClickListener(this);
+        skip.setOnClickListener(this);
     }
 
     public void pickContact(View v)
@@ -152,15 +166,28 @@ public class AddContacts extends AppCompatActivity implements View.OnClickListen
     }
 
     private void saveContacts(){
-        /*String nameText = name.getText().toString().trim();
-        String addressText = address.getText().toString().trim();
+        String name1Text = name1.getText().toString().trim();
+        String phone1Text = phone1.getText().toString().trim();
 
-        UserInformationClass userInformation = new UserInformationClass(nameText, addressText);
+        String name2Text = name2.getText().toString().trim();
+        String phone2Text = phone2.getText().toString().trim();
+
+        String name3Text = name3.getText().toString().trim();
+        String phone3Text = phone3.getText().toString().trim();
+
+        String name4Text = name4.getText().toString().trim();
+        String phone4Text = phone4.getText().toString().trim();
+
+        String name5Text = name5.getText().toString().trim();
+        String phone5Text = phone5.getText().toString().trim();
+
+        ContactsClass contacts = new ContactsClass(name1Text, phone1Text, name2Text, phone2Text,
+                name3Text, phone3Text, name4Text, phone4Text, name5Text, phone5Text);
 
         FirebaseUser user = firebaseAuth.getCurrentUser();
-        databaseReference.child(user.getUid()).setValue(userInformation);
+        databaseReference.child(user.getUid()).child("contacts").setValue(contacts);
 
-        Toast.makeText(this, "Information Saved", Toast.LENGTH_LONG).show();1*/
+        Toast.makeText(this, "Contacts Saved", Toast.LENGTH_LONG).show();
 
     }
 
@@ -198,11 +225,13 @@ public class AddContacts extends AppCompatActivity implements View.OnClickListen
 
         if(view == save){
             saveContacts();
+            firebaseAuth.signOut();
+            finish();
         }
 
         if(view == skip){
-           // finish();
-            //startActivity(new Intent(this, UserProfileActivity.class));
+            firebaseAuth.signOut();
+            finish();
         }
     }
 
