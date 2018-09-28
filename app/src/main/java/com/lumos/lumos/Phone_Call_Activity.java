@@ -16,7 +16,7 @@ import android.widget.Toast;
 import java.net.URI;
 
 import static android.content.Intent.ACTION_CALL;
-import static com.lumos.lumos.Manifest.*;
+
 
 public class Phone_Call_Activity extends AppCompatActivity {
     private static final int REQUEST_CALL = 1;

@@ -232,6 +232,7 @@ public class AddContacts extends AppCompatActivity implements View.OnClickListen
         if(view == skip){
             firebaseAuth.signOut();
             finish();
+            startActivity(new Intent(this, MapsActivity.class));
         }
     }
 
