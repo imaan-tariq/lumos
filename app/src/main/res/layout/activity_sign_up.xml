@@ -30,11 +30,15 @@
                 android:layout_height="wrap_content" />
 
             <Button
-                android:layout_margin="15dp"
                 android:id="@+id/buttonSignUp"
-                android:text="Sign Up"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="@color/colorPrimary"
+                android:text="Sign Up"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_margin="15dp"

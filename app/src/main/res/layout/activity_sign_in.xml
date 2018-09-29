@@ -13,12 +13,12 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="Sign In"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editTextEmail"
@@ -41,7 +41,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:text="Sign In" />
+            android:background="@color/colorPrimary"
+            android:text="Sign In"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/textViewSignUp"
