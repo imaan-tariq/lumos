@@ -1,5 +1,6 @@
 package com.lumos.lumos;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -16,7 +17,7 @@ import android.widget.Toast;
 import java.net.URI;
 
 import static android.content.Intent.ACTION_CALL;
-import static com.lumos.lumos.Manifest.*;
+//import static com.lumos.lumos.Manifest.*;
 
 public class Phone_Call_Activity extends AppCompatActivity {
     private static final int REQUEST_CALL = 1;
@@ -39,6 +40,7 @@ public class Phone_Call_Activity extends AppCompatActivity {
 
     }
 
+    @SuppressLint("MissingPermission")
     private void makePhoneCall() {
         String number = mEditTextNumber.getText().toString();
         if (number.trim().length() > 0) {
