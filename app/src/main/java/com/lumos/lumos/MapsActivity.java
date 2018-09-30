@@ -59,13 +59,13 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 @Override
                 public void onLocationChanged(Location location) {
                     double latitude = location.getLatitude();
-                    double logitude = location.getLongitude();
-                    LatLng latLng = new LatLng(latitude,logitude);
+                    double longitude = location.getLongitude();
+                    LatLng latLng = new LatLng(latitude,longitude);
 
                     //instantiate the class, Geocoder
                     Geocoder geocoder = new Geocoder(getApplicationContext());
                     try {
-                        List<Address> addressList = geocoder.getFromLocation(latitude, logitude, 1);
+                        List<Address> addressList = geocoder.getFromLocation(latitude, longitude, 1);
                         String str = addressList.get(0).getLocality()+ " , ";
                         //String str = addressList.get(0).getLocale()+ " , " ;
                         str +=addressList.get(0).getPostalCode()+ ", ";
@@ -109,13 +109,13 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 @Override
                 public void onLocationChanged(Location location) {
                     double latitude = location.getLatitude();
-                    double logitude = location.getLongitude();
-                    LatLng latLng = new LatLng(latitude,logitude);
+                    double longitude = location.getLongitude();
+                    LatLng latLng = new LatLng(latitude,longitude);
 
                     //instantiate the class, Geocoder
                     Geocoder geocoder = new Geocoder(getApplicationContext());
                     try {
-                        List<Address> addressList = geocoder.getFromLocation(latitude, logitude, 1);
+                        List<Address> addressList = geocoder.getFromLocation(latitude, longitude, 1);
                         String str = addressList.get(0).getLocality()+ " , ";
                         //String str = addressList.get(0).getLocale()+ " , " ;
                         str +=addressList.get(0).getPostalCode();
