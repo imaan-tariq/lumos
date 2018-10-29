@@ -19,8 +19,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="You are logged in!!!"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:text="You Are Logged In"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
         android:id="@+id/EditTextName"
@@ -29,10 +29,10 @@
         android:hint="Enter your full name" />
 
     <EditText
-        android:id="@+id/EditTextAddress"
+        android:id="@+id/EditTextPhoneNum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint = "Enter your address" />
+        android:hint = "Enter your phone number" />
 
     <Button
         android:id="@+id/buttonAddInfo"

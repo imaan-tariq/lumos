@@ -24,6 +24,8 @@ import com.google.firebase.auth.FirebaseAuth;
         private EditText password;
         private TextView signIn;
         private ProgressDialog progressDialog;
+        private String emailText;
+        private String passwordText;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +52,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
         private void registerUser(){
 
-            String emailText = email.getText().toString().trim();
-            String passwordText = password.getText().toString().trim();
+            emailText = email.getText().toString().trim();
+            passwordText = password.getText().toString().trim();
 
             if(TextUtils.isEmpty(emailText)){
                 //email is empty
@@ -103,4 +105,5 @@ import com.google.firebase.auth.FirebaseAuth;
                 startActivity(new Intent(this, SignInActivity.class));
             }
         }
+
     }

@@ -3,6 +3,7 @@ package com.lumos.lumos;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
         private Button buttonLogOut;
 
         private DatabaseReference databaseReference;
-        private EditText name, address;
+        private EditText name, phoneNum;
         private Button save;
 
         @Override
@@ -40,14 +41,15 @@ import com.google.firebase.database.FirebaseDatabase;
             databaseReference = FirebaseDatabase.getInstance().getReference();
 
             name = findViewById(R.id.EditTextName);
-            address = findViewById(R.id.EditTextAddress);
+            phoneNum = findViewById(R.id.EditTextPhoneNum);
+            phoneNum.addTextChangedListener(new PhoneNumberFormattingTextWatcher());
             save = findViewById(R.id.buttonAddInfo);
 
 
             FirebaseUser user = firebaseAuth.getCurrentUser();
 
             textViewUserEmail = findViewById(R.id.textViewUserEmail);
-            textViewUserEmail.setText("Welcome " + user.getEmail());
+            textViewUserEmail.setText("Hello " + user.getEmail());
 
             buttonLogOut = findViewById(R.id.buttonLogOut);
 
@@ -57,9 +59,9 @@ import com.google.firebase.database.FirebaseDatabase;
 
         private void saveUserInformation(){
             String nameText = name.getText().toString().trim();
-            String addressText = address.getText().toString().trim();
+            String phoneNumText = phoneNum.getText().toString().trim();
 
-            UserInformationClass userInformation = new UserInformationClass(nameText, addressText);
+            UserInformationClass userInformation = new UserInformationClass(nameText, phoneNumText);
 
             FirebaseUser user = firebaseAuth.getCurrentUser();
             databaseReference.child(user.getUid()).setValue(userInformation);
@@ -78,7 +80,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
             if(view == save){
                 saveUserInformation();
-                startActivity(new Intent(this, AddContacts.class));
+                startActivity(new Intent(this, AccountActivity.class));
+                //startActivity(new Intent(this, AddContacts.class));
             }
         }
     }
