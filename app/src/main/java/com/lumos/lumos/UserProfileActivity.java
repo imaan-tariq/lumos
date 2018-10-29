@@ -48,8 +48,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
             FirebaseUser user = firebaseAuth.getCurrentUser();
 
-            textViewUserEmail = findViewById(R.id.textViewUserEmail);
-            textViewUserEmail.setText("Hello " + user.getEmail());
+            textViewUserEmail = findViewById(R.id.textViewLoggedIn);
+           // textViewUserEmail.setText("Hello " + user.getEmail());
 
             buttonLogOut = findViewById(R.id.buttonLogOut);
 
