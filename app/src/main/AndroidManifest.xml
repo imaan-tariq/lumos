@@ -4,7 +4,10 @@
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.SEND_SMS" />
+=======
+>>>>>>> b8ebb0e0c8f0fdd3bdb80d748d022f8da5c6334b
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use

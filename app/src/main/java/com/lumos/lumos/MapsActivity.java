@@ -77,6 +77,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> b8ebb0e0c8f0fdd3bdb80d748d022f8da5c6334b
     @Override
     public void onLocationChanged(Location location) {
         lat = location.getLatitude();

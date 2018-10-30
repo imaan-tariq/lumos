@@ -3,6 +3,10 @@ package com.lumos.lumos;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+<<<<<<< HEAD
+=======
+import android.telephony.PhoneNumberFormattingTextWatcher;
+>>>>>>> b8ebb0e0c8f0fdd3bdb80d748d022f8da5c6334b
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,7 +26,11 @@ import com.google.firebase.database.FirebaseDatabase;
         private Button buttonLogOut;
 
         private DatabaseReference databaseReference;
+<<<<<<< HEAD
         private EditText name, address;
+=======
+        private EditText name, phoneNum;
+>>>>>>> b8ebb0e0c8f0fdd3bdb80d748d022f8da5c6334b
         private Button save;
 
         @Override
@@ -40,14 +48,24 @@ import com.google.firebase.database.FirebaseDatabase;
             databaseReference = FirebaseDatabase.getInstance().getReference();
 
             name = findViewById(R.id.EditTextName);
+<<<<<<< HEAD
             address = findViewById(R.id.EditTextAddress);
+=======
+            phoneNum = findViewById(R.id.EditTextPhoneNum);
+            phoneNum.addTextChangedListener(new PhoneNumberFormattingTextWatcher());
+>>>>>>> b8ebb0e0c8f0fdd3bdb80d748d022f8da5c6334b
             save = findViewById(R.id.buttonAddInfo);
 
 
             FirebaseUser user = firebaseAuth.getCurrentUser();
 
+<<<<<<< HEAD
             textViewUserEmail = findViewById(R.id.textViewUserEmail);
             textViewUserEmail.setText("Welcome " + user.getEmail());
+=======
+            textViewUserEmail = findViewById(R.id.textViewLoggedIn);
+           // textViewUserEmail.setText("Hello " + user.getEmail());
+>>>>>>> b8ebb0e0c8f0fdd3bdb80d748d022f8da5c6334b
 
             buttonLogOut = findViewById(R.id.buttonLogOut);
 
@@ -57,9 +75,15 @@ import com.google.firebase.database.FirebaseDatabase;
 
         private void saveUserInformation(){
             String nameText = name.getText().toString().trim();
+<<<<<<< HEAD
             String addressText = address.getText().toString().trim();
 
             UserInformationClass userInformation = new UserInformationClass(nameText, addressText);
+=======
+            String phoneNumText = phoneNum.getText().toString().trim();
+
+            UserInformationClass userInformation = new UserInformationClass(nameText, phoneNumText);
+>>>>>>> b8ebb0e0c8f0fdd3bdb80d748d022f8da5c6334b
 
             FirebaseUser user = firebaseAuth.getCurrentUser();
             databaseReference.child(user.getUid()).setValue(userInformation);
@@ -78,7 +102,12 @@ import com.google.firebase.database.FirebaseDatabase;
 
             if(view == save){
                 saveUserInformation();
+<<<<<<< HEAD
                 startActivity(new Intent(this, AddContacts.class));
+=======
+                startActivity(new Intent(this, AccountActivity.class));
+                //startActivity(new Intent(this, AddContacts.class));
+>>>>>>> b8ebb0e0c8f0fdd3bdb80d748d022f8da5c6334b
             }
         }
     }

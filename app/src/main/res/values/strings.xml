@@ -11,6 +11,7 @@
     <string name="satelliete_map">Satelliete Map</string>
     <string name="terrain_map">Terrain Map</string>
     <string name="none_map">None Map</string>
+<<<<<<< HEAD
 
     <!-- MessageActivity strings-->
     <string name="permission_not_granted">PERMISSION NOT GRANTED!</string>
@@ -21,4 +22,6 @@
     <string name="sms_disabled">SMS usage disabled</string>
     <string name="failure_permission">Failure to obtain permission!</string>
 
+=======
+>>>>>>> b8ebb0e0c8f0fdd3bdb80d748d022f8da5c6334b
 </resources>

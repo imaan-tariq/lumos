@@ -15,12 +15,22 @@
     android:layout_centerHorizontal = "true">
 
     <TextView
+<<<<<<< HEAD
         android:id="@+id/textViewUserEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="You are logged in!!!"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+=======
+        android:id="@+id/textViewLoggedIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="You Are Logged In"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textStyle="bold" />
+>>>>>>> b8ebb0e0c8f0fdd3bdb80d748d022f8da5c6334b
 
     <EditText
         android:id="@+id/EditTextName"
@@ -29,10 +39,17 @@
         android:hint="Enter your full name" />
 
     <EditText
+<<<<<<< HEAD
         android:id="@+id/EditTextAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint = "Enter your address" />
+=======
+        android:id="@+id/EditTextPhoneNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint = "Enter your phone number" />
+>>>>>>> b8ebb0e0c8f0fdd3bdb80d748d022f8da5c6334b
 
     <Button
         android:id="@+id/buttonAddInfo"
