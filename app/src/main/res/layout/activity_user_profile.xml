@@ -41,13 +41,5 @@
         android:layout_height="wrap_content"
         android:text="Save" />
 
-    <Button
-        android:id="@+id/buttonLogOut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Log Out" />
-
-
 </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -20,7 +20,6 @@ import com.google.firebase.database.FirebaseDatabase;
         private FirebaseAuth firebaseAuth;
 
         private TextView textViewUserEmail;
-        private Button buttonLogOut;
 
         private DatabaseReference databaseReference;
         private EditText name, phoneNum;
@@ -51,9 +50,6 @@ import com.google.firebase.database.FirebaseDatabase;
             textViewUserEmail = findViewById(R.id.textViewLoggedIn);
            // textViewUserEmail.setText("Hello " + user.getEmail());
 
-            buttonLogOut = findViewById(R.id.buttonLogOut);
-
-            buttonLogOut.setOnClickListener(this);
             save.setOnClickListener(this);
         }
 
@@ -72,16 +68,9 @@ import com.google.firebase.database.FirebaseDatabase;
 
         @Override
         public void onClick(View view) {
-            if(view == buttonLogOut){
-                firebaseAuth.signOut();
-                finish();
-                startActivity(new Intent(this, SignInActivity.class));
-            }
-
             if(view == save){
                 saveUserInformation();
-                startActivity(new Intent(this, AccountActivity.class));
-                //startActivity(new Intent(this, AddContacts.class));
+                startActivity(new Intent(this, AddContacts.class));
             }
         }
     }
