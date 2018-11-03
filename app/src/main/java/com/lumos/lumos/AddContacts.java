@@ -225,16 +225,13 @@ public class AddContacts extends AppCompatActivity implements View.OnClickListen
 
         if(view == save){
             saveContacts();
-            firebaseAuth.signOut();
             finish();
             startActivity(new Intent(this, MainActivity.class));
         }
 
         if(view == skip){
-            firebaseAuth.signOut();
             finish();
             startActivity(new Intent(this, MainActivity.class));
-            //startActivity(new Intent(this, MapsActivity.class));
         }
     }
 

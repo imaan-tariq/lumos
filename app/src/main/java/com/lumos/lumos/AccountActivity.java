@@ -29,7 +29,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class AccountActivity extends AppCompatActivity implements View.OnClickListener{
-    private static final String TAG = "";
+    private static final String TAG = "Settings";
     private EditText userName;
     private EditText userPhone;
     private Button save;
@@ -123,6 +123,7 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
+                                    //firebaseAuth.signOut();
                                     Log.d(TAG,"Account has been deleted");
                                     Toast.makeText(AccountActivity.this, "Account has been deleted", Toast.LENGTH_LONG).show();
                                     startActivity(new Intent(AccountActivity.this, SignInActivity.class));
@@ -149,9 +150,10 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View view) {
         if(view == save){
             saveNewUserInformation();
+            finish();
         }
 
-        if(view == buttonDelete){
+        if(view == buttonEditContacts){
             startActivity(new Intent(this, AddContacts.class));
         }
 

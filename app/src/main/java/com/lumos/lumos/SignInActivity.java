@@ -2,6 +2,7 @@ package com.lumos.lumos;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -97,7 +98,6 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View view) {
         if(view == buttonSignIn){
-            //go to profile
             userLogIn();
         }
 
@@ -107,4 +107,37 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         }
     }
 
+   /* public void loginUserForChat(final MyApplication application,  String email, String password) {
+        Log.d(TAG, "Attempting to login Firebase user...");
+        Firebase ref = new Firebase(FirebaseService.FIREBASE_URL);
+        final SimpleLogin authClient = new SimpleLogin(ref);
+        authClient.checkAuthStatus(new SimpleLoginAuthenticatedHandler() {
+            @Override
+            public void authenticated(com.firebase.simplelogin.enums.Error error, User user) {
+                if (error != null) {
+                    Log.d(TAG, "error performing check: " + error);
+                } else if (user == null) {
+                    Log.d(TAG, "no user logged in. Will login...");
+                    authClient.loginWithEmail(email, password, new SimpleLoginAuthenticatedHandler() {
+                        @Override
+                        public void authenticated(com.firebase.simplelogin.enums.Error error, User user) {
+                            if(error != null) {
+                                if(com.firebase.simplelogin.enums.Error.UserDoesNotExist == error) {
+                                    Log.e(TAG, "UserDoesNotExist!");
+                                } else {
+                                    Log.e(TAG, "Error attempting to login Firebase User: " + error);
+                                }
+                            }
+                            else {
+                                Log.d(TAG, "User successfully logged into Firebase");
+                                application.setLoggedIntoChat(true);
+                            }
+                        }
+                    });
+                } else {
+                    Log.d(TAG, "user is logged in");
+                }
+            }
+        });
+    }*/
 }

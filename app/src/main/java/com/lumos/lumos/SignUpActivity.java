@@ -50,6 +50,21 @@ import com.google.firebase.auth.FirebaseAuth;
 
         }
 
+        /*Firebase ref = new Firebase(FIREBASE_URL);
+        SimpleLogin authClient = new SimpleLogin(ref);
+    authClient.createUser(email, password, new SimpleLoginAuthenticatedHandler() {
+            @Override
+            public void authenticated(com.firebase.simplelogin.enums.Error error, User user) {
+                if(error != null) {
+                    Log.e(TAG, "Error attempting to create new Firebase User: " + error);
+                }
+                else {
+                    Log.d(TAG, "User successfully registered for Firebase");
+                    application.setLoggedIntoChat(true);
+                }
+            }
+        });*/
+
         private void registerUser(){
 
             emailText = email.getText().toString().trim();

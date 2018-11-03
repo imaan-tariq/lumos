@@ -33,8 +33,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     MarkerOptions mo;
     Marker marker;
     LocationManager locationManager;
-    double lat = -29.118349;
-    double lng = 26.22492;
+    public static  double lat = -29.118349;
+    public  static double lng = 26.22492;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +50,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         } else requestLocation();
         if (!isLocationEnabled())
             showAlert(1);
+
+        finish();
     }
 
     @Override
