@@ -44,7 +44,6 @@ import com.google.firebase.database.FirebaseDatabase;
             phoneNum.addTextChangedListener(new PhoneNumberFormattingTextWatcher());
             save = findViewById(R.id.buttonAddInfo);
 
-
             FirebaseUser user = firebaseAuth.getCurrentUser();
 
             textViewUserEmail = findViewById(R.id.textViewLoggedIn);
@@ -70,6 +69,7 @@ import com.google.firebase.database.FirebaseDatabase;
         public void onClick(View view) {
             if(view == save){
                 saveUserInformation();
+                finish();
                 startActivity(new Intent(this, AddContacts.class));
             }
         }

@@ -48,6 +48,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
         buttonSignIn.setOnClickListener(this);
         signUp.setOnClickListener(this);
+
     }
 
     private void userLogIn(){
@@ -83,7 +84,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                         if(task.isSuccessful()){
                             //start user profile activity
                             finish();
-                            startActivity(new Intent(getApplicationContext(), UserProfileActivity.class));
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         }
                         else{
                             Toast.makeText(SignInActivity.this, "Something Failed. Try Again.", Toast.LENGTH_SHORT).show();
@@ -105,4 +106,5 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
             startActivity(new Intent(this, SignUpActivity.class));
         }
     }
+
 }

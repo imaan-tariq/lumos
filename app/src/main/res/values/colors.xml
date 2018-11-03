@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#0b0202</color>
     <color name="colorAccent">#FF4081</color>
     <color name="contacts">#FF1111</color>
+    <color name="background">#FFFFFF</color>
 </resources>
