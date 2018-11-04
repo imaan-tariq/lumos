@@ -45,21 +45,23 @@ public class MessageActivity extends AppCompatActivity {
         databaseReference.child(currentUserId.getUid()).addValueEventListener(new ValueEventListener() {
           @Override
           public void onDataChange(DataSnapshot dataSnapshot) {
-              int i;
-              for(i = 1; i <= 5; i++){
-                  cname = dataSnapshot.child("contacts/name" + Integer.toString(i)).getValue(String.class);
-                  cPhone = dataSnapshot.child("contacts/phone" + Integer.toString(i)).getValue(String.class);
+              if (dataSnapshot.hasChild("contacts")) {
+                  int i;
+                  for (i = 1; i <= 5; i++) {
+                      cname = dataSnapshot.child("contacts/name" + Integer.toString(i)).getValue(String.class);
+                      cPhone = dataSnapshot.child("contacts/phone" + Integer.toString(i)).getValue(String.class);
 
-                  if(!cPhone.equals("")) {
-                      String messageToSend = "Hello " + cname + "\nI'm sharing my location with you \n"
-                              + "http://maps.google.com/maps?z=12&t=m&q=loc:" + MapsActivity.lat + "+" + MapsActivity.lng;
-                      String number = cPhone;
+                      if (!cPhone.equals("")) {
+                          String messageToSend = "Hello " + cname + "\nI'm sharing my location with you \n"
+                                  + "http://maps.google.com/maps?z=12&t=m&q=loc:" + MapsActivity.lat + "+" + MapsActivity.lng;
+                          String number = cPhone;
 
-                      SmsManager.getDefault().sendTextMessage(number, null, messageToSend, null,null);
+                          SmsManager.getDefault().sendTextMessage(number, null, messageToSend, null, null);
+                      }
                   }
               }
 
-              Toast.makeText(getApplicationContext(),"Message Sent.",Toast.LENGTH_SHORT).show();
+              Toast.makeText(MessageActivity.this,"Message Sent.",Toast.LENGTH_SHORT).show();
           }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
