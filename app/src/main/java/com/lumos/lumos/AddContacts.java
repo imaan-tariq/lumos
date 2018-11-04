@@ -226,12 +226,12 @@ public class AddContacts extends AppCompatActivity implements View.OnClickListen
         if(view == save){
             saveContacts();
             finish();
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
         }
 
         if(view == skip){
             finish();
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
         }
     }
 

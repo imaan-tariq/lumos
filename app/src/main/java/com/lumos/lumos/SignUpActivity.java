@@ -117,7 +117,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
             if(view == signIn){
                 //will open login activity
-                startActivity(new Intent(this, SignInActivity.class));
+                startActivity(new Intent(getApplicationContext(), SignInActivity.class));
             }
         }
 

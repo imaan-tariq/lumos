@@ -103,7 +103,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
         if(view == signUp){
             finish();
-            startActivity(new Intent(this, SignUpActivity.class));
+            startActivity(new Intent(getApplicationContext(), SignUpActivity.class));
         }
     }
 

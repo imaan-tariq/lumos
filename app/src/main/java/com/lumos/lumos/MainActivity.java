@@ -6,12 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button buttonLogOut;
     private Button mainButton;
     private Button settings;
 
     private int clickCount = 0;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,27 +28,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonLogOut.setOnClickListener(this);
         mainButton.setOnClickListener(this);
         settings.setOnClickListener(this);
+
+        firebaseAuth = FirebaseAuth.getInstance();
     }
 
     @Override
     public void onClick(View view) {
         if (view == buttonLogOut) {
             finish();
-            startActivity(new Intent(this, SignInActivity.class));
+            firebaseAuth.signOut();
+            startActivity(new Intent(getApplicationContext(), SignInActivity.class));
         }
 
         if (view == mainButton) {
             clickCount++;
 
             if(clickCount == 1){
-                startActivity(new Intent(this, MessageActivity.class));
+                startActivity(new Intent(getApplicationContext(), MessageActivity.class));
             } else if(clickCount == 2){
-                startActivity(new Intent(this, RecordVideoActivity.class));
+                startActivity(new Intent(getApplicationContext(), RecordVideoActivity.class));
             }
         }
 
         if (view == settings) {
-            startActivity(new Intent(this, AccountActivity.class));
+            startActivity(new Intent(getApplicationContext(), AccountActivity.class));
         }
 
     }

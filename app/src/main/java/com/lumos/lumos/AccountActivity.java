@@ -123,10 +123,10 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
-                                    //firebaseAuth.signOut();
+                                    firebaseAuth.signOut();
                                     Log.d(TAG,"Account has been deleted");
                                     Toast.makeText(AccountActivity.this, "Account has been deleted", Toast.LENGTH_LONG).show();
-                                    startActivity(new Intent(AccountActivity.this, SignInActivity.class));
+                                    startActivity(new Intent(getApplicationContext(), SignInActivity.class));
                                     finish();
                                 } else {
                                     Log.w(TAG,"Something is wrong!");
@@ -154,7 +154,7 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
         }
 
         if(view == buttonEditContacts){
-            startActivity(new Intent(this, AddContacts.class));
+            startActivity(new Intent(getApplicationContext(), AddContacts.class));
         }
 
         if(view == buttonDelete){

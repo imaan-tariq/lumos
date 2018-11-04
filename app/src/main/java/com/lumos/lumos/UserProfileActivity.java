@@ -34,7 +34,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
             if(firebaseAuth.getCurrentUser() == null){
                 finish();
-                startActivity(new Intent(this, SignInActivity.class));
+                startActivity(new Intent(getApplicationContext(), SignInActivity.class));
             }
 
             databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -70,7 +70,7 @@ import com.google.firebase.database.FirebaseDatabase;
             if(view == save){
                 saveUserInformation();
                 finish();
-                startActivity(new Intent(this, AddContacts.class));
+                startActivity(new Intent(getApplicationContext(), AddContacts.class));
             }
         }
     }
