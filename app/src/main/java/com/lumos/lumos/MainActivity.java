@@ -39,13 +39,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             if(clickCount == 1){
                 startActivity(new Intent(this, MessageActivity.class));
-                clickCount=0;
             } else if(clickCount == 2){
                 startActivity(new Intent(this, RecordVideoActivity.class));
-                clickCount=0;
-            }
-            else{
-                clickCount=0;
             }
         }
 
