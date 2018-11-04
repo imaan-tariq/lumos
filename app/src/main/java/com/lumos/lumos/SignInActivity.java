@@ -41,7 +41,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         if (firebaseAuth.getCurrentUser() != null) {
             //start profile activity
             finish();
-            startActivity(new Intent(getApplicationContext(), UserProfileActivity.class));
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
         }
 
         buttonSignIn = findViewById(R.id.buttonSignIn);
