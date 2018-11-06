@@ -42,10 +42,15 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".SignInActivity" />
-        <activity android:name=".UserProfileActivity" />
-        <activity android:name=".AddContacts" />
+        <activity android:name=".SignUpActivity"
+                  android:theme="@style/AppAnim"/>
+
+        <activity android:name=".SignInActivity"
+                  android:theme="@style/AppAnim"/>
+
+        <activity android:name=".AddContacts"
+                    android:theme="@style/AppAnim"/>
+
         <activity android:name=".Phone_Call_Activity" />
         <activity
             android:name=".MapsActivity"
@@ -63,8 +68,12 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".AccountActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".AccountActivity"
+                    android:theme="@style/AppAnim"/>
+
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppAnim"/>
+
         <activity android:name=".RecordVideoActivity" />
         <activity android:name=".MessageActivity"
             android:theme="@android:style/Theme.NoDisplay" />

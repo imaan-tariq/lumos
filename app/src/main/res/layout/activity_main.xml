@@ -22,13 +22,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:text="Log Out" />
         <Button
             android:id="@+id/buttonSettings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:text="Settings" />
 
         <Button
