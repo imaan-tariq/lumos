@@ -53,7 +53,7 @@ public class MessageActivity extends AppCompatActivity {
 
                       if (!cPhone.equals("")) {
                           String messageToSend = "Hello " + cname + "\nI'm sharing my location with you \n"
-                                  + "http://maps.google.com/maps?z=12&t=m&q=loc:" + MapsActivity.lat + "+" + MapsActivity.lng;
+                                  + "http://maps.google.com/maps?z=12&t=m&q=loc:" + Double.toString(MapsActivity.getLat()) + "+" + Double.toString(MapsActivity.getLng());
                           String number = cPhone;
 
                           SmsManager.getDefault().sendTextMessage(number, null, messageToSend, null, null);
@@ -61,7 +61,7 @@ public class MessageActivity extends AppCompatActivity {
                   }
               }
 
-              Toast.makeText(MessageActivity.this,"Message Sent.",Toast.LENGTH_SHORT).show();
+              Toast.makeText(MessageActivity.this,"Message Sent",Toast.LENGTH_SHORT).show();
           }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {

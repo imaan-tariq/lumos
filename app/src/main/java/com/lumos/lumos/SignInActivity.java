@@ -39,7 +39,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
         //check if user is already logged in
         if (firebaseAuth.getCurrentUser() != null) {
-            //start profile activity
+            //start main activity
             finish();
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
         }
